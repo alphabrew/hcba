@@ -1,0 +1,21 @@
+{% extends 'base.html' %}
+{% load static %}
+
+{% block content %}
+
+
+<h3>Announcements:</h3>
+
+<ul>
+  {% for a in announcements %}
+    {% if a.is_published %}
+    <li>{{ a.announcement }}</li>
+
+    {% endif %}
+  {% endfor %}
+</ul>
+
+
+
+
+{% endblock %}

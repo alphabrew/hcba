@@ -1,0 +1,29 @@
+{% extends 'base.html' %}
+{% load static %}
+
+{% block title %} Members {% endblock %}
+
+
+
+{% block content %}
+    <h1>Welcome, {{ user.username }}</h1>
+
+<p>Here is a list of the current members:</p>
+<table>
+ <tr>
+   <th>Name</th>
+   <th>email</th>
+ </tr>
+{% for member in members %}
+ <tr>
+   <td>{{ member.name }}</td>
+   <td>{{ member.email }}</td>
+ </tr>
+ {% endfor %}
+</table>
+
+<br><br>
+
+<img src="{% static 'img/indexphoto.webp' %}" alt="">
+
+{% endblock %}

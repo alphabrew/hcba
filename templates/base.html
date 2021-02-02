@@ -1,0 +1,39 @@
+
+{% load static %}
+
+<!DOCTYPE html>
+<html lang="en" dir="ltr">
+  <head>
+    <link rel="stylesheet" href="{% static 'css/master.css' %}">
+    <meta charset="utf-8">
+    <img src="{% static 'img/header image.jpg' %}" alt="">
+    <title>{% block title %} Welcome to HCBA {% endblock %}</title>
+  </head>
+  <p> <em>THIS IS A FAKE WEBSITE MADE FOR EDUCATIONAL PURPOSES.  NOT AFFILIATED WITH THE REAL ORGANIZATION!</em> </p>
+  <ul class=navbar>
+    <li class=navbarli><a href="{% url 'index' %}">Home</a></li>
+  <li class=navbarli><a href="{% url 'about' %}">About HCBA</a></li>
+  <li class=navbarli><a href="{% url 'services' %}">Services</a></li>
+  <li class=navbarli><a href="{% url 'community' %}">Community</a></li>
+  <li class=navbarli><a href="{% url 'education' %}">Education</a></li>
+  <li class=navbarli><a href="{% url 'members' %}">Members Only</a></li>
+  {% if user.is_authenticated %}
+  <li class=navbarli><a href="{% url 'logout' %}">Logout</a></li>
+  {% endif %}
+
+</ul>
+  <body>
+
+    {% block content %}
+
+    {% endblock %}
+
+  </body>
+
+<footer>
+<p class="foot">Howard County Beekeepers Association, Inc is a not-for-profit, tax-exempt 501(c)(3) organization.</p>
+<p class="foot">To contact us, use this website, send us an email at hocobeekeepersassoc@gmail.com or mail us at: P.O. Box 1416 Ellicott City Maryland 21041</p>
+<p class="foot">Copyright 2019, 2020, 2021 Howard County Beekeepers Association, Inc. No original content or images may be used without permission.</p>
+
+</footer>
+</html>

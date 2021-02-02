@@ -1,0 +1,25 @@
+{% extends 'base.html' %}
+
+{% block content %}
+
+
+<div class="container">
+<h1>Edit Profile</h1>
+<form class="" action="{% url 'edit_profile' %}" method="post">
+  {% csrf_token %}
+
+  {% if form.errors %}
+    <p>Your form has errors...</p>
+  {% endif %}
+
+  {{ form.as_p }}
+
+  <input type="submit" name="" value="Save Changes" class="btn btn-secondary"><br><br>
+
+  <a href="{% url 'change_password' %}">Click here to change your password</a>
+
+</form>
+
+
+</div>
+{% endblock %}
