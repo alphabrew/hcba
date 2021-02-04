@@ -85,10 +85,12 @@ WSGI_APPLICATION = 'hcba.wsgi.application'
 
 DATABASES = {
     'default': {
-        'ENGINE': 'django.db.backends.sqlite3',
-        'NAME': BASE_DIR / 'db.sqlite3',
+        'ENGINE': 'django.db.backends.postgresql_psycopg2',
+
     }
 }
+DATABASES['default'] = dj_database_url.config(default='postgres://mdqghprnqsuzhn:d09b0e04dc13d6685712d373e00eca5acc48ac06fe1cc906e04c0cdd2f3c14c6@ec2-107-22-14-60.compute-1.amazonaws.com:5432/dae0b8qq3gugil')
+
 
 
 # Password validation
