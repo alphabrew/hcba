@@ -5,11 +5,11 @@ from members .models import Member
 
 # Create your views here.
 def index(request):
-    announcements = Announcement.objects.order_by('-date').filter(is_published=True)
-    context= {
-        'announcements': announcements
-    }
-    return render(request, 'pages/index.html' , context)
+    #announcements = Announcement.objects.order_by('-date').filter(is_published=True)
+    #context= {
+    #    'announcements': announcements
+    #}
+    return render(request, 'pages/index.html' , {})
 
 def about(request):
     return render(request, 'pages/about.html', {})
